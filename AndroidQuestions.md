@@ -443,3 +443,104 @@ A: LiveData and ObservableField are both used for data binding and observing cha
     - Powerful and efficient HTTP client library developed by Square
     - Provides advanced features like connection pooling, transparent GZIP compression, response caching, and automatic retries
     - Can be used as a standalone library or in combination with Retrofit for a more comprehensive solution
+
+# Questions from Past Interviews
+
+## WillowTree
+
+1. **Coroutines:** Coroutines are a Kotlin feature that converts async callbacks into sequential code, making the code more readable and simpler. They help manage long-running tasks that might otherwise block the main thread and cause your app to freeze. They're revolutionary because they solve the problem of callback hell and allow you to write cleaner, more manageable code.
+
+2. **Suspend Functions:** Suspend functions are at the heart of coroutines. A function marked with the 'suspend' keyword can be paused and resumed, allowing long-running tasks to be managed more effectively. This means the system won't block the thread it's running on and other operations can use the thread.
+
+3. **Flows:** In Kotlin, `Flow` is a type that can emit multiple values sequentially, making it useful for handling stream of data asynchronously. Similar to how `LiveData` works on Android, `Flow` offers more flexibility and control.
+
+4. **Dependency Injection:** Dependency Injection (DI) is a technique where an object receives its dependencies from outside. It increases the flexibility, testability and maintainability of your code. On Android, DI libraries like Dagger, Hilt or Koin are commonly used.
+
+5. **ProGuard:** ProGuard is a tool that shrinks, optimizes, and obfuscates your code by removing unused code and renaming classes, fields, and methods with semantically obscure names, making the APK harder to reverse engineer.
+
+6. **RecyclerView vs ListView:** `RecyclerView` is a more advanced version of `ListView` with improved performance and greater flexibility. It was introduced as part of the material design guidelines. Key benefits of `RecyclerView` include the built-in layout manager for item arrangement, item animator for animations, and view holder pattern for recycling items.
+
+7. **ViewModel:** `ViewModel` is part of Android Architecture Components, which are libraries that help you design robust, testable, and maintainable apps. `ViewModel` stores and manages UI-related data in a lifecycle-conscious way - it's designed to store UI-related data so that the data survives configuration changes like screen rotations.
+
+8. **Repository Pattern:** The Repository pattern is a design pattern that abstracts the data layer, providing a way to access data from various sources like network, database, etc. It provides a clean API for data access to the rest of the application.
+
+9. **JSON:** JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate. On Android, you commonly interact with JSON when consuming REST APIs or storing structured data.
+
+10. **Google's App Architecture:** Google's recommended app architecture suggests designing the app with a layered approach. The UI layer interacts with ViewModel, ViewModel fetches data from the Repository, and Repository decides whether to fetch data from a local database or network. This architecture encourages the Single Responsibility Principle and separation of concerns, making the app easier to maintain and test. Components like ViewModel, LiveData, Room, and DataBinding are recommended to build the architecture.
+
+## Anywhere Real Estate
+
+1. **Null Safety:** Kotlin incorporates inherent null safety. This means that Kotlin types by default can't hold null values, helping to eliminate the risk of Null Pointer Exceptions. You can, however, declare a variable as nullable by adding a "?" after the type.
+
+2. **Exception Handling:** Kotlin uses a `try-catch-finally` approach, similar to Java, for exception handling. However, unlike Java, Kotlin doesn't have checked exceptions, meaning the compiler doesn't force you to catch or declare any exceptions.
+
+3. **Interfaces:** Kotlin interfaces are similar to Java's, serving as contracts that can be implemented by classes. They can contain abstract function declarations, as well as function implementations, but they can't hold state (no backing fields).
+
+4. **Annotations:** Annotations in Kotlin provide metadata about your code that can be read by the compiler, the Kotlin runtime, or other tools. They can be used to suppress warnings, generate extra code, or affect the behavior of your code in various ways.
+
+5. **Two-Way Data Binding:** Two-way Data Binding means that the UI fields are bound to ViewModel fields in a way that any changes in ViewModel fields automatically update in the UI, and vice-versa. This is particularly useful when you want user inputs to be automatically reflected in your underlying data model.
+
+6. **SOLID Principles:** SOLID is an acronym for five design principles intended to make software designs more understandable, flexible, and maintainable. They are: Single Responsibility Principle, Open-Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, and Dependency Inversion Principle. While these principles aren't specific to Kotlin, they can and should be applied when writing Kotlin code.
+
+7. **Principle of Least Surprise:** This principle asserts that a system should behave in a manner consistent with how users expect it to behave; in other words, it should meet users' expectations and not surprise them. This principle is applicable to any area of software development, including Android development with Kotlin.
+
+8. **Unit Testing:** Unit testing is a method of testing where individual units of source code, such as functions or methods, are tested to determine whether they work correctly. Kotlin has great support for unit testing. Libraries like JUnit, Mockito, and Robolectric are commonly used, and Kotlin's features such as Coroutines and Flows have their own testing APIs.
+
+9. **MVP Design Pattern:** MVP stands for Model-View-Presenter. It's a software architectural pattern that separates the application into three interconnected parts: Model (handles data), View (displays the UI and triggers user actions), and Presenter (responds to UI actions and updates the data model). This separation facilitates easier testing and maintenance of code.
+
+## More Anywhere Real Estate
+
+Sure, let's go through each SOLID principle and how it applies to Android development in Kotlin:
+
+1. **Single Responsibility Principle (SRP):** This principle states that a class should have one, and only one, reason to change. In Android development, this could mean separating data management, UI logic, and business logic into separate classes. For example, a `ViewModel` should be responsible for preparing data for the UI but should not be responsible for fetching data from the network or a database.
+
+2. **Open-Closed Principle (OCP):** This principle states that software entities should be open for extension but closed for modification. This encourages the use of abstract classes and interfaces in Kotlin for Android development. For example, you can define a `DatabaseInterface` and implement it with `RoomDatabaseClass`. If you later decide to switch databases, you just need to provide a new implementation of the `DatabaseInterface`.
+
+3. **Liskov Substitution Principle (LSP):** This principle asserts that subclasses must be substitutable for their base classes without causing issues. This principle helps when designing inheritance hierarchies in your Android app, and helps maintain a proper, logical inheritance hierarchy.
+
+4. **Interface Segregation Principle (ISP):** This principle states that clients should not be forced to depend upon interfaces they do not use. In other words, it's better to have many smaller, role-specific interfaces, rather than one large, general-purpose interface. For example, if a class only needs to load data, don't give it an interface that includes saving and deleting data methods.
+
+5. **Dependency Inversion Principle (DIP):** This principle states that high-level modules should not depend on low-level modules - both should depend on abstractions. Furthermore, abstractions should not depend upon details - details should depend upon abstractions. In the context of Android development with Kotlin, this principle supports the use of dependency injection, which makes classes more modular, easier to test, and better suited for collaboration with others.
+
+Regarding unit tests in Kotlin for Android, a typical unit test might look like this:
+
+```kotlin
+@RunWith(JUnit4::class)
+class ExampleUnitTest {
+
+    private lateinit var systemUnderTest: SystemUnderTest
+
+    @Before
+    fun setup() {
+        // Initialization work happens here.
+        systemUnderTest = SystemUnderTest()
+    }
+
+    @Test
+    fun `should return correct result when condition is met`() {
+        // Arrange
+        val expected = ...
+
+        // Act
+        val result = systemUnderTest.performAction()
+
+        // Assert
+        assertEquals(expected, result)
+    }
+
+    @After
+    fun tearDown() {
+        // Clean up work happens here.
+    }
+}
+```
+
+In this example:
+
+- `@RunWith(JUnit4::class)` is an annotation to specify the test runner.
+- `@Before` and `@After` are annotations indicating methods to be run before and after each test, usually for setup and cleanup.
+- `@Test` is an annotation indicating that the method is a test method.
+- The test name is a descriptive sentence indicating what the test is for.
+- The body of the test follows the Arrange-Act-Assert pattern.
+
+Remember, the purpose of unit testing is to verify the correctness of a unit of work (a function or method), and each unit test should test only one specific aspect of the system under test.

@@ -264,3 +264,30 @@
 
     - `CompositionLocal` is a way to implicitly pass data through the composition tree
     = `CompositionLocal` is similar to `Context` in traditional Android development, and is used for data that's needed by many composables or that cannot be passed down as parameters
+<br></br>
+
+# Jetpack Compose Activity and Fragment Lifecycles
+
+- In Jetpack Compose, Activity and Fragment lifecycles still exist, but the emphasis has shifted to the lifecycles of composable functions.
+
+- Activity Lifecycle with Jetpack Compose:
+  - An activity still follows the traditional lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy().
+  - In the onCreate() method, we typically call setContent { } to define our composable UI hierarchy.
+  - In terms of Jetpack Compose, Activity lifecycle callbacks are not typically where you would handle most of your logic, as you would use lifecycle-aware components within your composables instead.
+
+- Fragment Lifecycle with Jetpack Compose:
+  - Fragments also still follow their traditional lifecycle: onAttach(), onCreate(), onCreateView(), onActivityCreated(), onStart(), onResume(), onPause(), onStop(), onDestroyView(), onDestroy(), and onDetach().
+  - Similarly to Activities, in the onCreateView() or onViewCreated() method, you'd call setContent { } to set up your composable UI.
+  - Like Activities, you would not typically use Fragment lifecycle callbacks to handle logic for composables, but would instead rely on lifecycle-aware components within the composables themselves.
+
+- Composable Lifecycle with Jetpack Compose:
+  - Jetpack Compose has its own concept of a lifecycle for composable functions, which is tied to when the composable enters or leaves the composition, and not directly to the Activity or Fragment lifecycle.
+  - The lifecycle of a composable function is:
+    - Composition: The composable function is first called and included in the composition.
+    - Insertion: The produced UI is added to the tree of active composables, and its effects (side-effects introduced by the LaunchedEffect, DisposableEffect and remember functions) are started.
+    - Update: If the data the composable reads has changed, the composable will be recomposed - that is, the function will be invoked again to produce a new UI description. Only the effects that depend on changed data will be restarted.
+    - Removal: If the composable is no longer needed (for example, because a conditional that included it in the composition has become false), its effects will be stopped, and it will be removed from the tree of active composables.
+  - For observing lifecycle events within a composable function, you'd typically use the LaunchedEffect and DisposableEffect functions. The LaunchedEffect function starts a coroutine that's cancelled when the composable leaves the composition, and DisposableEffect starts an effect that produces a Disposable lambda, which is invoked when the composable leaves the composition.
+  - For example, you might use LaunchedEffect to start a network request when a composable is first inserted, and use DisposableEffect to cancel ongoing work when the composable is removed.
+  - The remember function is also important to the lifecycle of a composable: it creates an object that is remembered across recompositions, as long as the composable remains in the composition. When the composable leaves the composition, the remembered object is forgotten. If the composable is later included in the composition again, the remember function will be called again to create a new object.
+  - In summary, while the traditional Android lifecycles still exist when using Jetpack Compose, the key focus shifts to the composable lifecycle, which is more granular and tied to the individual composables rather than the containing Activity or Fragment.

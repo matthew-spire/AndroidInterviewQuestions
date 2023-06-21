@@ -34,15 +34,6 @@
   - If no visibility modifier is specified, the "public" is used by default, meaning the declarations will be accessible everywhere inside the program.
 <br></br>
 
-- **Advantages of Kotlin over Java**
-  - Data class: In Kotlin, data classes handle hashCode, toString, and equals methods automatically unlike Java.
-  - Getter and setter patterns: No need to rewrite the getter and setter methods for each variable in Kotlin.
-  - Extension Functions: Kotlin provides support for extension functions, which Java does not.
-  - Support for one common codebase with the Kotlin Multi-Platform framework.
-  - Built-in null safety support.
-  - Less prone to errors: Kotlin is more concise and expressive than Java.
-<br></br>
-
 - **Mutable List vs Immutable List in Kotlin**
   - A mutable list is used if the collection will change as part of the design, while an immutable list is used if the model is only meant to be viewed.
   - Immutable lists are preferred as they promote functional programming and are easier to understand and debug.

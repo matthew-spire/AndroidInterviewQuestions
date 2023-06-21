@@ -60,6 +60,7 @@
 | **Thread Safety**   | Not guaranteed                | Guaranteed (by default)        |
 | **Use Cases**       | Mostly for Android Views & DI | Expensive computations & caching |
 
+<br></br>
 
 - **Scope Functions in Kotlin**
     - Functions that execute a block of code within the context of an object, creating a temporary scope.

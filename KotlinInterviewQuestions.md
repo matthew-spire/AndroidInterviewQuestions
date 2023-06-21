@@ -39,16 +39,6 @@
   - Immutable lists are preferred as they promote functional programming and are easier to understand and debug.
 <br></br>
 
-- **Lateinit in Kotlin**
-  - The "lateinit" keyword is used for late initialization of a variable.
-  - This is useful in scenarios like variable initialization in lifecycle methods in Android, using Dagger for DI, setup for unit tests, and annotations in Spring Boot.
-<br></br>
-
-- **Lazy Initialization in Kotlin**
-  - Lazy initialization is used to delay the initialization of an object until it's used for the first time, making the code more efficient and faster.
-  - It's used in cases where object initialization is time-consuming, causing the entire class creation process to be delayed.
-<br></br>
-
 - **Difference between "lateinit" and "lazy" initialization**
 
 |                     | `lateinit`                    | `lazy`                         |

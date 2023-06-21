@@ -24,10 +24,10 @@
 <br></br>
 
 - **Companion Object in Kotlin**
-  - Kotlin does not have a "static" keyword like Java for declaring class members.
-  - Instead, Kotlin uses "companion objects" to achieve the same functionality.
-  - Companion objects are declared using the "companion" keyword in front of the object definition.
-  - All the required static member functions and member variables can be kept inside the companion object.
+  - Declared inside a class and marked with the `companion` keyword
+  - Used to create members (functions and variables) that can be accessed without having an instance of the class, much like `static` members in Java
+  - Access the members of the companion function within the class without having an instance of the class
+  - common usage of companion objects is when you need a factory method that can return an instance of the class
 <br></br>
 
 - **Difference Between "open" and "public" Keywords in Kotlin**

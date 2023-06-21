@@ -1,36 +1,3 @@
-- Kotlin is an open-source, general-purpose, statically typed programming language, developed by JetBrains.
-- It is JVM-based and can be used in all projects where Java is currently used.
-- Kotlin can be used to create Android apps, server-side apps, and a variety of other applications.
-- It is interoperable with Java, meaning Kotlin and Java can be mixed in the same project.
-- Kotlin blends Object Oriented Programming (OOPs) and functional programming.
-- Programs written in Kotlin do not require semicolons, enhancing code readability.
-- Kotlin's type system is designed to eliminate NullPointerExceptions from code.
-<br></br>
-
-- **Key Features of Kotlin**
-  - Compact code: Code lines can be reduced by up to 40% compared to Java.
-  - Open Source: Kotlin uses the JVM to combine the benefits of OOPs and functional programming.
-  - Simple Language: Kotlin has simple code compilation and improved performance for Android development.
-  - High number of extensions: Kotlin supports a variety of extension functions without modifying the code.
-  - Full Java Interoperability: Java code can utilize Kotlin code and vice versa.
-  - Smart Cast: Kotlin supports smart casting to manage the efficiency of programming.
-  - Low Learning Curve: Kotlin is easy to learn, especially for developers with programming experience.
-<br></br>
-
-- **Kotlin Data Types**
-  - Integer: byte (8 bits), short (16 bits), int (32 bits), long (64 bits)
-  - Floating Point: float (32 bits), double (64 bits)
-  - Boolean: boolean (1 bit)
-  - Character: char (8 bits)
-  - String: Represented by the type String, space depends on the number of characters.
-  - Array: Represented by the Array class in Kotlin, space depends on the number of elements.
-<br></br>
-
-- **Variables in Kotlin**
-  - Immutable Variables: Declared using the `val` keyword, their values cannot be changed.
-  - Mutable Variables: Declared using the `var` keyword, their values can be changed.
-<br></br>
-
 - **Data Classes in Kotlin**
   - Data class is a simple class that holds data and provides typical functions like `equals()`, `hashCode()`, `copy()`, and `toString()`.
 <br></br>
@@ -57,23 +24,6 @@
   - Checked Exceptions: Kotlin does not have checked exceptions, making exception handling different compared to Java.
 <br></br>
 
-- **Kotlin Constructors**
-    - Primary Constructor: Declared in the class header and can be initialized with the `constructor` keyword.
-    - Secondary Constructor: Allows for the initialization of variables as well as the addition of logic to the class. Prefixed with the `constructor` keyword.
-<br></br>
-
-- **Iterating Over Data Structures in Kotlin**
-    - For Loop: Used to iterate over any data structure that provides an iterator.
-    - While Loop: Made up of a code block and a condition to be checked for each iteration.
-    - Do While Loop: Similar to the while loop, but the condition is evaluated after the execution of the block.
-<br></br>
-
-- **Concatenating Strings in Kotlin**
-    - Using String Interpolation: Substitute the strings in place of their placeholders in the initialization of the third string.
-    - Using the `+` or `plus()` operator: Concatenate two strings and store them in a third variable.
-    - Using StringBuilder: Append the first string and then the second string to a StringBuilder object.
-<br></br>
-
 - **Function Extension in Kotlin**: Allows users to define a method outside of the main class, providing a way to add or remove method functionality without altering the class itself.
 <br></br>
 
@@ -89,11 +39,6 @@
   - If no visibility modifier is specified, the "public" is used by default, meaning the declarations will be accessible everywhere inside the program.
 <br></br>
 
-- **When Keyword in Kotlin**
-  - The "when" keyword in Kotlin replaces the "switch" operator in other languages such as Java.
-  - It compares all of the branches one by one until a match is discovered, then executes the corresponding block of code.
-<br></br>
-
 - **Advantages of Kotlin over Java**
   - Data class: In Kotlin, data classes handle hashCode, toString, and equals methods automatically unlike Java.
   - Getter and setter patterns: No need to rewrite the getter and setter methods for each variable in Kotlin.
@@ -105,7 +50,6 @@
 
 - **Mutable List vs Immutable List in Kotlin**
   - A mutable list is used if the collection will change as part of the design, while an immutable list is used if the model is only meant to be viewed.
-  - "val" and "var" specify how a variable's value/reference should be handled. "var" is used when the value or reference of a variable can be changed at any time, while "val" is used when a variable's value/reference can only be assigned once and can't be modified later.
   - Immutable lists are preferred as they promote functional programming and are easier to understand and debug.
 <br></br>
 
@@ -165,10 +109,3 @@
     - **launch/join**: launch is used to start and stop a coroutine. join is used to wait for the launched coroutine to complete.
     - **async/await**: async initiates a coroutine that computes a result. await is used on the result, represented by an instance of Deferred.
 <br></br>
-
-- **Disadvantages of Kotlin**
-    - Presence of a few keywords with non-obvious meanings.
-    - Absence of checked exceptions.
-    - A lot of what happens in Kotlin is hidden.
-    - Limited learning resources due to a small developer community.
-    - Variable compilation speed with Java often outperforming Kotlin in clean builds.

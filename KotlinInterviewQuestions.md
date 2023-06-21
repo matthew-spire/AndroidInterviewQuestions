@@ -50,12 +50,14 @@
 <br></br>
 
 - **Difference between "lateinit" and "lazy" initialization**
-  - "lateinit" is used to delay the initialization to a later point, while "lazy" initialization is used to initialize an object only when it is used.
-  - "lateinit" can initialize the object from anywhere in the program, but "lazy" initialization can only be initialized using the initializer lambda.
-  - In "lateinit", multiple initializations are possible, while in "lazy" initialization, only a single initialization is possible.
-  - "lateinit" is not thread-safe, but "lazy" initialization is thread-safe by default.
-  - "lateinit" only works with "var", while "lazy" initialization only works with "val".
-<br></br>
+|                     | `lateinit`                    | `lazy`                         |
+|---------------------|-------------------------------|--------------------------------|
+| **Initialization**  | Deferred until assignment     | Deferred until first access    |
+| **Keyword**         | `lateinit`                    | `by lazy`                      |
+| **Mutability**      | Mutable (`var`)               | Read-only (`val`)              |
+| **Nullability**     | Non-null                      | Non-null                       |
+| **Thread Safety**   | Not guaranteed                | Guaranteed (by default)        |
+| **Use Cases**       | Mostly for Android Views & DI | Expensive computations & caching |
 
 - **Coroutines in Kotlin**
     - Not part of Kotlin's standard library; instead, the kotlinx.coroutines library is used.

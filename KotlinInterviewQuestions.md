@@ -9,15 +9,15 @@
   - Not Null Assertion Operator (!!): Changes a null value to a non-null type and throws an exception if the value is null.
 <br></br>
 
-- **Differences Between Kotlin and Java**
-  - Null Safety: Kotlin has non-nullable variables by default, providing safety against null pointer exceptions which are a common problem in Java.
-  - Coroutines Support: Kotlin has support for coroutines, allowing more efficient execution of long-running tasks compared to Java.
-  - Data Classes: Kotlin supports data classes which can be declared simply with the keyword "data", providing automatic generation of constructors, getters, setters, and other methods.
-  - Functional Programming: Kotlin supports both procedural and functional programming and has several useful features such as lambda expressions and higher-order functions.
-  - Extension Functions: Kotlin allows the addition of new functionality to an existing class with extension functions, a feature not present in Java.
-  - Data Type Inference: Kotlin provides data type inference, meaning we don't have to declare the type of each variable based on the assignment it will handle.
-  - Smart Casting: Kotlin provides smart casting with the keyword "is-checks", simplifying casting operations.
-  - Checked Exceptions: Kotlin does not have checked exceptions, making exception handling different compared to Java.
+- **What does Kotlin support that Java does not?**
+  - Null Safety
+  - Coroutines Support
+  - Data Classes
+  - Functional Programming
+  - Extension Functions
+  - Data Type Inference
+  - Smart Casting
+  - No Checked Exceptions
 <br></br>
 
 - **Function Extension in Kotlin**: Allows users to define a method outside of the main class, providing a way to add or remove method functionality without altering the class itself.

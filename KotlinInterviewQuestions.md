@@ -1,7 +1,3 @@
-- **Data Classes in Kotlin**
-  - Data class is a simple class that holds data and provides typical functions like `equals()`, `hashCode()`, `copy()`, and `toString()`.
-<br></br>
-
 - **Null Safety in Kotlin**
   - Kotlin's type system aims to eradicate null references from the code.
   - Kotlin provides Safe Call (?.), Elvis (?:) and Not Null Assertion (!!) operators to handle null encounters.

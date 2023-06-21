@@ -25,9 +25,8 @@
 
 - **Companion Object in Kotlin**
   - Declared inside a class and marked with the `companion` keyword
-  - Used to create members (functions and variables) that can be accessed without having an instance of the class, much like `static` members in Java
-  - Access the members of the companion object within the class without having an instance of the class
-  - common usage of companion objects is when you need a factory method that can return an instance of the class
+  - Used to create members (functions and variables) that can be accessed inside the class without having an instance of the class, much like `static` members in Java
+  - Common usage: When you need a factory method that can return an instance of the class
 <br></br>
 
 - **Difference Between "open" and "public" Keywords in Kotlin**

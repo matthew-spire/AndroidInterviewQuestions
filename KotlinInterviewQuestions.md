@@ -50,7 +50,7 @@
 <br></br>
 
 - **Difference between "lateinit" and "lazy" initialization**
-```
+
 |                     | `lateinit`                    | `lazy`                         |
 |---------------------|-------------------------------|--------------------------------|
 | **Initialization**  | Deferred until assignment     | Deferred until first access    |
@@ -59,7 +59,7 @@
 | **Nullability**     | Non-null                      | Non-null                       |
 | **Thread Safety**   | Not guaranteed                | Guaranteed (by default)        |
 | **Use Cases**       | Mostly for Android Views & DI | Expensive computations & caching |
-```
+
 <br></br>
 
 - **Coroutines in Kotlin**

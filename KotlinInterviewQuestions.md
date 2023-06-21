@@ -61,13 +61,6 @@
 | **Use Cases**       | Mostly for Android Views & DI | Expensive computations & caching |
 <br></br>
 
-- **Coroutines in Kotlin**
-    - Not part of Kotlin's standard library; instead, the kotlinx.coroutines library is used.
-    - High-level coroutine-enabled primitives like launch and async.
-    - Lightweight as they don't allocate new threads when created but use predefined thread pools and intelligent scheduling.
-    - Can be paused and resumed in the middle of their execution.
-<br></br>
-
 - **Scope Functions in Kotlin**
     - Functions that execute a block of code within the context of an object, creating a temporary scope.
     - Types of scope functions include:

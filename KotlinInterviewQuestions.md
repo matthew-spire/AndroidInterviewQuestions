@@ -70,7 +70,6 @@
 
 - **Sealed Classes in Kotlin**
     - Used to represent restricted (constrained or bounded) class hierarchies &rarr; A value can be one of the types from a limited set, but not any other type
-    - Constructors are by default private and cannot be instantiated
     - Subclasses are known at compile time, and no other subclasses can be created after compilation &rarr; Provide type safety by limiting the types that can be matched at compile time
     - Good for something like `when` statement (no longer needs to be exhaustive), CalculatorActions, etc.
 <br></br>
